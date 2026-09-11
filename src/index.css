@@ -87,3 +87,13 @@
   color: #F8FAFC !important;
   padding: 0.75rem 1rem !important;
 }
+
+.theme-light {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #f8fafc;
+}
+.theme-light .keep-colors,
+.theme-light .recharts-wrapper,
+.theme-light img {
+  filter: invert(1) hue-rotate(180deg);
+}
