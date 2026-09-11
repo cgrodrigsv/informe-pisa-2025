@@ -18,7 +18,7 @@ export default function CompetencyGap() {
   const activeSubject = COMPETENCY_GAP_DATA.subjects.find(s => s.id === selectedSubjectId) || COMPETENCY_GAP_DATA.subjects[0];
 
   return (
-    <section className="py-12 relative border-t border-slate-800/80">
+    <section className="py-12 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -28,20 +28,20 @@ export default function CompetencyGap() {
               <ShieldAlert className="w-3.5 h-3.5" />
               <span>Equidad y Distribución de Desempeño</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
               Brecha de Competencias: <span className="text-gradient-rose">Top Performers vs. Low Achievers</span>
             </h2>
-            <p className="mt-1 text-slate-400 text-sm max-w-2xl">
+            <p className="mt-1 text-slate-500 dark:text-slate-400 text-sm max-w-2xl">
               Comparativa del porcentaje de estudiantes con excelencia académica (Niveles 5 y 6) frente al grupo que no alcanza el nivel mínimo funcional (Por debajo del Nivel 2).
             </p>
           </div>
 
           {/* Quick Filter Switcher */}
-          <div className="flex bg-slate-900 p-1 rounded-xl border border-slate-800 self-start md:self-auto">
+          <div className="flex bg-white dark:bg-slate-900 p-1 rounded-xl border border-slate-200 dark:border-slate-800 self-start md:self-auto">
             <button
               onClick={() => setSelectedSubjectId('all')}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                selectedSubjectId === 'all' ? 'bg-rose-500 text-white font-bold shadow-md shadow-rose-500/20' : 'text-slate-400 hover:text-slate-200'
+                selectedSubjectId === 'all' ? 'bg-rose-500 text-slate-900 dark:text-white font-bold shadow-md shadow-rose-500/20' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200'
               }`}
             >
               Todas las Materias
@@ -51,7 +51,7 @@ export default function CompetencyGap() {
                 key={s.id}
                 onClick={() => setSelectedSubjectId(s.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  selectedSubjectId === s.id ? 'bg-rose-500 text-white font-bold shadow-md shadow-rose-500/20' : 'text-slate-400 hover:text-slate-200'
+                  selectedSubjectId === s.id ? 'bg-rose-500 text-slate-900 dark:text-white font-bold shadow-md shadow-rose-500/20' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200'
                 }`}
               >
                 {s.name}
@@ -64,14 +64,14 @@ export default function CompetencyGap() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Chart Container (2 cols) */}
-          <div className="lg:col-span-2 glass-card p-6 rounded-3xl border border-slate-800/80">
+          <div className="lg:col-span-2 glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800/80">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <ArrowRightLeft className="w-5 h-5 text-rose-400" />
                   <span>Distribución Porcentual de Niveles de Desempeño</span>
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">Promedios de la OCDE PISA 2025</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Promedios de la OCDE PISA 2025</p>
               </div>
 
               {/* Legend Badges */}
@@ -121,10 +121,10 @@ export default function CompetencyGap() {
                     <Award className="w-4 h-4" />
                     <span>Estudiantes de Alto Rendimiento</span>
                   </div>
-                  <div className="text-3xl font-extrabold font-display text-white mt-1">
+                  <div className="text-3xl font-extrabold font-display text-slate-900 dark:text-white mt-1">
                     {activeSubject.topPerformers}%
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                     Alcanzan Niveles 5 y 6 (capacidad de resolución de problemas complejos e hipótesis científicas).
                   </p>
                 </div>
@@ -139,10 +139,10 @@ export default function CompetencyGap() {
                     <AlertTriangle className="w-4 h-4" />
                     <span>Estudiantes de Bajo Rendimiento</span>
                   </div>
-                  <div className="text-3xl font-extrabold font-display text-white mt-1">
+                  <div className="text-3xl font-extrabold font-display text-slate-900 dark:text-white mt-1">
                     {activeSubject.lowAchievers}%
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                     No alcanzan el Nivel 2 (umbral mínimo de competencia funcional para la sociedad moderna).
                   </p>
                 </div>
@@ -150,14 +150,14 @@ export default function CompetencyGap() {
             </div>
 
             {/* Net Competency Gap Box */}
-            <div className="glass-card p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-rose-950/40 border border-slate-800">
+            <div className="glass-card p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-rose-950/40 border border-slate-200 dark:border-slate-800">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold text-slate-300">Brecha Neta (Top vs. Low)</span>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Brecha Neta (Top vs. Low)</span>
                 <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
                   {activeSubject.netGap} p.p.
                 </span>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                 {activeSubject.description}
               </p>
             </div>

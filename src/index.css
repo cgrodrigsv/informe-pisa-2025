@@ -15,7 +15,7 @@
 }
 
 @layer utilities {
-  .glass-card {
+  .glass-card {`n    background: rgba(255, 255, 255, 0.8);`n    border: 1px solid rgba(0, 0, 0, 0.1);`n  }`n  .dark .glass-card {
     background: rgba(30, 41, 59, 0.65);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -92,9 +92,10 @@
   filter: invert(1) hue-rotate(180deg);
   background-color: #f8fafc;
 }
-.theme-light .keep-colors,
-.theme-light .recharts-wrapper,
+
+
 .theme-light img {
   filter: invert(1) hue-rotate(180deg);
 }
+
 

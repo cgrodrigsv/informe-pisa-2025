@@ -18,7 +18,7 @@ export default function App() {
   const [theme, setTheme] = useState('dark');
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-white ${theme === 'light' ? 'theme-light' : ''}`}>
+    <div className={`min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 selection:bg-sky-500 selection:text-slate-900 dark:text-white ${theme === 'dark' ? 'dark' : '}`}>
       
       <Navbar 
         onOpenRagModal={() => setIsRagModalOpen(true)}
@@ -42,12 +42,13 @@ export default function App() {
         <div id="directorio"><CountryExplorer /></div>
       </main>
       
-      <footer className="border-t border-slate-800 bg-[#0f172a] py-12 text-center">
-        <p className="text-slate-400">PISA 2025 Education Dashboard</p>
+      <footer className="border-t border-slate-200 dark:border-slate-800 bg-[#0f172a] py-12 text-center">
+        <p className="text-slate-500 dark:text-slate-400">PISA 2025 Education Dashboard</p>
       </footer>
       
       {isRagModalOpen && <RagAssistantModal onClose={() => setIsRagModalOpen(false)} />}
     </div>
   );
 }
+
 

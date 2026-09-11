@@ -18,9 +18,9 @@ const data = [
 
 export default function EquityScatter({ activeDomain }) {
   return (
-    <section className="py-12 border-b border-slate-800/80">
+    <section className="py-12 border-b border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-white mb-6">Equidad Educativa: Impacto Socioeconómico (ESCS) vs Rendimiento</h2>
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Equidad Educativa: Impacto Socioeconómico (ESCS) vs Rendimiento</h2>
         <div className="glass-card rounded-3xl p-6 h-[500px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>

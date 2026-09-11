@@ -23,15 +23,15 @@ export default function HeroStats({ activeDomain }) {
         
         {/* Banner Title & Summary */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs text-sky-400 mb-4">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-300 dark:border-slate-700/80 text-xs text-sky-400 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Datos Oficiales Extraídos RAG • PISA 2025 (Vol. I)</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight leading-tight">
             Promedios Globales y <span className="text-gradient-sky">Cifras de Impacto</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
-            Evaluación trienal de la OCDE sobre el rendimiento de estudiantes de 15 años en 85 países, focalizado en competencias científicas y el nuevo dominio de <strong className="text-slate-200">Aprendizaje en el Mundo Digital (LDW)</strong>.
+          <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            Evaluación trienal de la OCDE sobre el rendimiento de estudiantes de 15 años en 85 países, focalizado en competencias científicas y el nuevo dominio de <strong className="text-slate-700 dark:text-slate-200">Aprendizaje en el Mundo Digital (LDW)</strong>.
           </p>
         </div>
 
@@ -40,52 +40,52 @@ export default function HeroStats({ activeDomain }) {
           
           <div className="glass-card glass-card-hover p-4 rounded-2xl relative overflow-hidden group">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Estudiantes Evaluados</span>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Estudiantes Evaluados</span>
               <div className="p-2 rounded-xl bg-sky-500/10 text-sky-400">
                 <Users className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-display">
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">
               3.4 M
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               Muestra directa: <span className="text-sky-300 font-semibold">{PISA_2025_META.testedSampleStudents.toLocaleString()}</span> evaluados
             </p>
           </div>
 
           <div className="glass-card glass-card-hover p-4 rounded-2xl relative overflow-hidden group">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Escuelas Evaluadas</span>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Escuelas Evaluadas</span>
               <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
                 <Building2 className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-display">
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">
               {PISA_2025_META.evaluatedSchools.toLocaleString()}
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               Instituciones educativas globales
             </p>
           </div>
 
           <div className="glass-card glass-card-hover p-4 rounded-2xl relative overflow-hidden group">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Países y Economías</span>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Países y Economías</span>
               <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400">
                 <Globe2 className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-display">
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">
               {PISA_2025_META.participatingCountries}
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               <span className="text-purple-300 font-medium">{PISA_2025_META.oecdMembers} OCDE</span> + {PISA_2025_META.partnerEconomies} asociados
             </p>
           </div>
 
           <div className="glass-card glass-card-hover p-4 rounded-2xl relative overflow-hidden group">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Dominio Principal</span>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Dominio Principal</span>
               <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
                 <Atom className="w-4 h-4" />
               </div>
@@ -93,7 +93,7 @@ export default function HeroStats({ activeDomain }) {
             <div className="text-xl sm:text-2xl font-bold text-amber-300 font-display truncate">
               Ciencias & LDW
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               Foco 2025 en alfabetización digital
             </p>
           </div>
@@ -115,35 +115,35 @@ export default function HeroStats({ activeDomain }) {
 
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/80 border border-slate-700/80 text-slate-300">
+                    <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 text-slate-600 dark:text-slate-300">
                       Promedio OCDE
                     </span>
-                    <div className={`p-2.5 rounded-2xl bg-slate-900/90 border border-slate-800 ${item.text}`}>
+                    <div className={`p-2.5 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 ${item.text}`}>
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-1">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1">
                     {data.label}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                     {data.description}
                   </p>
                 </div>
 
                 <div>
                   <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    <span className="text-4xl sm:text-5xl font-black font-display text-slate-900 dark:text-white tracking-tight">
                       {data.score}
                     </span>
-                    <span className="text-xs font-semibold text-slate-400">
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                       {data.unit}
                     </span>
                   </div>
 
                   {/* Trend indicator */}
-                  <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                    <span className="text-slate-400">Variación vs. 2022:</span>
+                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs">
+                    <span className="text-slate-500 dark:text-slate-400">Variación vs. 2022:</span>
                     <span className={`font-semibold flex items-center gap-1 ${
                       data.shortTermChange < 0 
                         ? 'text-rose-400' 
