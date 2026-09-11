@@ -4,21 +4,25 @@
 
 @layer base {
   body {
-    background-color: #020617;
+    @apply bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-50;
     background-image: 
       radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
       radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
       radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
     background-attachment: fixed;
-    color: #F8FAFC;
   }
 }
 
 @layer utilities {
-  .glass-card {`n    background: rgba(255, 255, 255, 0.8);`n    border: 1px solid rgba(0, 0, 0, 0.1);`n  }`n  .dark .glass-card {
-    background: rgba(30, 41, 59, 0.65);
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -27,9 +31,14 @@
   }
   
   .glass-card-hover:hover {
-    background: rgba(30, 41, 59, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     border-color: rgba(56, 189, 248, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.1), 0 0 15px rgba(56, 189, 248, 0.15);
+  }
+
+  .dark .glass-card-hover:hover {
+    background: rgba(30, 41, 59, 0.85);
     box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.15);
   }
 
@@ -65,37 +74,38 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #090D16;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #cbd5e1;
   border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
 
 /* Tooltip Customization for Recharts */
 .recharts-default-tooltip {
-  background-color: rgba(15, 23, 42, 0.95) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 0.75rem !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
-  color: #F8FAFC !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  color: #0f172a !important;
   padding: 0.75rem 1rem !important;
 }
 
-.theme-light {
-  filter: invert(1) hue-rotate(180deg);
-  background-color: #f8fafc;
+.dark .recharts-default-tooltip {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  color: #F8FAFC !important;
 }
-
-
-.theme-light img {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-
