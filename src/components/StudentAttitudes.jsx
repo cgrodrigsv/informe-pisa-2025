@@ -51,7 +51,7 @@ export default function StudentAttitudes() {
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
               <XAxis dataKey="name" stroke="#94a3b8" tick={{fontSize: 12}} />
               <YAxis domain={[0, 100]} stroke="#94a3b8" tickFormatter={(value) => `${value}%`} />
-              <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '8px' }} itemStyle={{color: '#fff'}} />
+              <Tooltip cursor={{fill: 'transparent'}} contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '8px' }} itemStyle={{color: '#fff'}} />
               <Legend wrapperStyle={{paddingTop: '20px'}} />
               <Bar dataKey="curiosity" name="Curiosidad" fill="#f59e0b" radius={[4, 4, 0, 0]} />
               <Bar dataKey="growthMindset" name="Mentalidad de Crecimiento" fill="#a855f7" radius={[4, 4, 0, 0]} />
@@ -62,3 +62,4 @@ export default function StudentAttitudes() {
     </section>
   );
 }
+

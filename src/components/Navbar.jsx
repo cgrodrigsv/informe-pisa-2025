@@ -13,13 +13,13 @@ export default function Navbar({ theme, setTheme, onOpenRagModal }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#0b1120] border-b border-slate-800/80 transition-all font-sans">
+    <header className="sticky top-0 z-40 bg-slate-950 border-b border-slate-800/80 transition-all font-sans">
       {/* Top Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">
           
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-full border-2 border-blue-600 flex items-center justify-center bg-[#0b1120] relative">
+            <div className="w-12 h-12 rounded-full border-2 border-blue-600 flex items-center justify-center bg-slate-950 relative">
               <span className="text-blue-500 font-black text-xl tracking-tighter">PISA</span>
               <div className="absolute inset-0 rounded-full border-2 border-purple-500 opacity-50 blur-sm"></div>
             </div>
@@ -55,7 +55,7 @@ export default function Navbar({ theme, setTheme, onOpenRagModal }) {
       </div>
 
       {/* Bottom Bar - Navigation Links */}
-      <div className="bg-[#0f172a] border-t border-slate-800/50">
+      <div className="bg-slate-900 border-t border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex space-x-8 overflow-x-auto hide-scrollbar py-3">
             {navItems.map((item, idx) => (
@@ -77,3 +77,4 @@ export default function Navbar({ theme, setTheme, onOpenRagModal }) {
     </header>
   );
 }
+

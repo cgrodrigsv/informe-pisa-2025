@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import { COUNTRY_EXPLORER_DATA } from '../data/pisa2025Data';
 
 export default function GlobalMap({ activeDomain }) {
   const chartRef = useRef(null);
@@ -16,12 +17,41 @@ export default function GlobalMap({ activeDomain }) {
           const worldJson = await response.json();
           echarts.registerMap('world', worldJson);
           
+          const getProp = () => {
+            if (activeDomain === 'math') return 'math';
+            if (activeDomain === 'reading') return 'reading';
+            if (activeDomain === 'digitalWorld') return 'digital';
+            return 'science';
+          };
+          
+          const mapData = COUNTRY_EXPLORER_DATA.map(c => {
+            let eName = c.name;
+            if (c.name === 'Estados Unidos') eName = 'United States';
+            if (c.name === 'Reino Unido') eName = 'United Kingdom';
+            if (c.name === 'Japón') eName = 'Japan';
+            if (c.name === 'Canadá') eName = 'Canada';
+            if (c.name === 'Corea del Sur') eName = 'Korea';
+            if (c.name === 'Brasil') eName = 'Brazil';
+            if (c.name === 'Perú') eName = 'Peru';
+            if (c.name === 'España') eName = 'Spain';
+            if (c.name === 'México') eName = 'Mexico';
+            if (c.name === 'B-S-J-Z (China)') eName = 'China';
+            if (c.name === 'Singapur') eName = 'Singapore';
+            return { name: eName, value: c[getProp()] };
+          });
+          
+          // Add El Salvador explicitly just in case
+          if (!mapData.find(m => m.name === 'El Salvador')) {
+            mapData.push({ name: 'El Salvador', value: 385 });
+          }
+
           const option = {
             tooltip: {
               trigger: 'item',
               showDelay: 0,
               transitionDuration: 0.2,
               formatter: function (params) {
+                if (isNaN(params.value)) return params.name + ': Sin datos';
                 const value = (params.value + '').split('.');
                 const valueStr = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, ',');
                 return params.seriesName + '<br/>' + params.name + ': ' + valueStr;
@@ -45,23 +75,7 @@ export default function GlobalMap({ activeDomain }) {
                 roam: true,
                 map: 'world',
                 emphasis: { label: { show: true } },
-                data: [
-                  { name: 'China', value: 590 },
-                  { name: 'Singapore', value: 575 },
-                  { name: 'Japan', value: 536 },
-                  { name: 'Korea', value: 527 },
-                  { name: 'Estonia', value: 526 },
-                  { name: 'Canada', value: 515 },
-                  { name: 'Finland', value: 511 },
-                  { name: 'United Kingdom', value: 508 },
-                  { name: 'United States', value: 504 },
-                  { name: 'Spain', value: 485 },
-                  { name: 'Mexico', value: 410 },
-                  { name: 'Brazil', value: 400 },
-                  { name: 'Argentina', value: 395 },
-                  { name: 'Colombia', value: 390 },
-                  { name: 'Peru', value: 385 }
-                ]
+                data: mapData
               }
             ]
           };
