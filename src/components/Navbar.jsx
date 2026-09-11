@@ -5,11 +5,11 @@ export default function Navbar({ theme, setTheme, onOpenRagModal }) {
   const navItems = [
     { label: 'Resumen Global', href: '#resumen' },
     { label: 'Mapa de Rendimiento', href: '#mapa' },
+    { label: 'Actitudes (Cap. 3)', href: '#actitudes' },
+    { label: 'Vida Escolar (Cap. 4)', href: '#vida-escolar' },
+    { label: 'Medio Ambiente (Cap. 5)', href: '#medio-ambiente' },
     { label: 'Brechas y Equidad', href: '#brechas' },
-    { label: 'Análisis de Tendencias', href: '#tendencias' },
-    { label: 'Impacto Socioeconómico', href: '#impacto' },
-    { label: 'Habilidades del Futuro', href: '#habilidades' },
-    { label: 'Directorio de Países', href: '#directorio' }
+    { label: 'Directorio', href: '#directorio' }
   ];
 
   return (

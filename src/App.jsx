@@ -8,6 +8,9 @@ import CompetencyGap from './components/CompetencyGap';
 import TopSystems from './components/TopSystems';
 import FutureSkills from './components/FutureSkills';
 import CountryExplorer from './components/CountryExplorer';
+import StudentAttitudes from './components/StudentAttitudes';
+import SchoolLife from './components/SchoolLife';
+import EnvironmentReadiness from './components/EnvironmentReadiness';
 import RagAssistantModal from './components/RagAssistantModal';
 
 export default function App() {
@@ -26,6 +29,12 @@ export default function App() {
       <main className="flex-1 space-y-4">
         <div id="resumen"><HeroStats activeDomain="all" /></div>
         <div id="mapa"><GlobalMap activeDomain="all" /></div>
+        
+        {/* Nuevas secciones Capítulos 3, 4, 5 */}
+        <div id="actitudes"><StudentAttitudes /></div>
+        <div id="vida-escolar"><SchoolLife /></div>
+        <div id="medio-ambiente"><EnvironmentReadiness /></div>
+
         <div id="brechas"><CompetencyGap /></div>
         <div id="tendencias"><HistoricalTrends activeDomain="all" /></div>
         <div id="impacto"><EquityScatter activeDomain="all" /></div>

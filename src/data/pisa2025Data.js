@@ -341,3 +341,28 @@ export const RAG_QA_BANK = [
   }
 ];
 
+
+export const ATTITUDES_DATA = [
+  { name: 'Macao (China)', curiosity: 78, perseverance: 75, growthMindset: 72, valuesSchool: 80, oecdCuriosity: 73, oecdGrowth: 69 },
+  { name: 'Singapur', curiosity: 76, perseverance: 74, growthMindset: 75, valuesSchool: 78, oecdCuriosity: 73, oecdGrowth: 69 },
+  { name: 'Japón', curiosity: 70, perseverance: 68, growthMindset: 65, valuesSchool: 72, oecdCuriosity: 73, oecdGrowth: 69 },
+  { name: 'El Salvador', curiosity: 69, perseverance: 65, growthMindset: 49, valuesSchool: 79, oecdCuriosity: 73, oecdGrowth: 69 },
+  { name: 'México', curiosity: 72, perseverance: 62, growthMindset: 55, valuesSchool: 75, oecdCuriosity: 73, oecdGrowth: 69 },
+  { name: 'Promedio OCDE', curiosity: 73, perseverance: 60, growthMindset: 69, valuesSchool: 76, oecdCuriosity: 73, oecdGrowth: 69 }
+];
+
+export const SCHOOL_LIFE_DATA = [
+  { name: 'Singapur', aiUsage: 65, digitalDistraction: 15, bullying: 12, cellBan: 85 },
+  { name: 'Estonia', aiUsage: 55, digitalDistraction: 20, bullying: 18, cellBan: 60 },
+  { name: 'El Salvador', aiUsage: 40, digitalDistraction: 23, bullying: 25, cellBan: 71 },
+  { name: 'España', aiUsage: 42, digitalDistraction: 35, bullying: 22, cellBan: 50 },
+  { name: 'Promedio OCDE', aiUsage: 46, digitalDistraction: 28, bullying: 20, cellBan: 49 }
+];
+
+export const ENVIRONMENT_DATA = [
+  { name: 'Singapur', readiness: 85, collectiveAction: 88, futureJob: 70 },
+  { name: 'Canadá', readiness: 78, collectiveAction: 85, futureJob: 65 },
+  { name: 'El Salvador', readiness: 35, collectiveAction: 80, futureJob: 75 },
+  { name: 'Colombia', readiness: 42, collectiveAction: 82, futureJob: 72 },
+  { name: 'Promedio OCDE', readiness: 74, collectiveAction: 82, futureJob: 62 }
+];
