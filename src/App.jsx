@@ -18,7 +18,7 @@ export default function App() {
   const [theme, setTheme] = useState('dark');
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 selection:bg-sky-500 selection:text-slate-900 dark:text-white ${theme === 'dark' ? 'dark' : '}`}>
+    <div className={`min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 selection:bg-sky-500 selection:text-slate-900 dark:text-white ${theme === 'dark' ? 'dark' : '''}`}>
       
       <Navbar 
         onOpenRagModal={() => setIsRagModalOpen(true)}
@@ -50,5 +50,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
