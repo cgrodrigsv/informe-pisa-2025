@@ -3,9 +3,9 @@ import { Atom, Calculator, BookOpen, Cpu, Sparkles, Globe, FileText, Sun, Moon }
 
 export default function Navbar({ activeDomain, setActiveDomain, onOpenRagModal, theme, setTheme }) {
   const domains = [
-    { id: 'all', label: 'VisiA3n General', icon: Globe },
+    { id: 'all', label: 'Visión General', icon: Globe },
     { id: 'science', label: 'Ciencias', icon: Atom },
-    { id: 'math', label: 'MatemAticas', icon: Calculator },
+    { id: 'math', label: 'Matemáticas', icon: Calculator },
     { id: 'reading', label: 'Lectura', icon: BookOpen },
     { id: 'digitalWorld', label: 'Mundo Digital', icon: Cpu }
   ];
@@ -40,8 +40,8 @@ export default function Navbar({ activeDomain, setActiveDomain, onOpenRagModal, 
                 const Icon = domain.icon;
                 const isActive = activeDomain === domain.id;
                 return (
-                  <button key={domain.id} onClick={() => setActiveDomain(domain.id)} className={lex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap $isActive ? 'bg-sky-500 text-white shadow-md shadow-sky-500/25 font-semibold' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}>
-                    <Icon className={w-3.5 h-3.5 $isActive ? 'text-white' : 'text-slate-400'} />
+                  <button key={domain.id} onClick={() => setActiveDomain(domain.id)} className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap ${isActive ? 'bg-sky-500 text-white shadow-md shadow-sky-500/25 font-semibold' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}`}>
+                    <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-400'}`} />
                     <span>{domain.label}</span>
                   </button>
                 );

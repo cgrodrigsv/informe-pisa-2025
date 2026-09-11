@@ -18,7 +18,7 @@ export default function App() {
   const [theme, setTheme] = useState('dark');
 
   return (
-    <div className={min-h-screen flex flex-col font-sans bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-white $theme === 'light' ? 'theme-light' : ''}>
+    <div className={`min-h-screen flex flex-col font-sans bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-white ${theme === 'light' ? 'theme-light' : ''}`}>
       
       {/* Top Navbar */}
       <Navbar 

@@ -34,14 +34,14 @@ export default function CountryExplorer() {
     const csvContent = [
       headers.join(','),
       ...filteredCountries.map(c => 
-        "$(c.name)",$(c.code),$(c.science),$(c.math),$(c.reading),$(c.digital),$(c.topPerformersPct),$(c.lowPerformersPct),$(c.escsGap)
+        `"${c.name}",${c.code},${c.science},${c.math},${c.reading},${c.digital},${c.topPerformersPct},${c.lowPerformersPct},${c.escsGap}`
       )
     ].join('\n');
 
     const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = pisa2025_export_.csv;
+    link.download = `pisa2025_export_${new Date().toISOString().split('T')[0]}.csv`;
     link.click();
   };
 
@@ -131,9 +131,9 @@ export default function CountryExplorer() {
               <input type="text" placeholder="Buscar país o código..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full bg-slate-900/90 border border-slate-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all" />
             </div>
             <div className="flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-xl p-1 w-full sm:w-auto">
-              <button onClick={() => handleSort('science')} className={px-3 py-1.5 rounded-lg text-xs font-semibold transition-all }>Ciencias</button>
-              <button onClick={() => handleSort('math')} className={px-3 py-1.5 rounded-lg text-xs font-semibold transition-all }>Math</button>
-              <button onClick={() => handleSort('reading')} className={px-3 py-1.5 rounded-lg text-xs font-semibold transition-all }>Lectura</button>
+              <button onClick={() => handleSort('science')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${sortBy === 'science' ? 'bg-sky-500 text-white' : 'text-slate-400 hover:text-white'}`}>Ciencias</button>
+              <button onClick={() => handleSort('math')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${sortBy === 'math' ? 'bg-indigo-500 text-white' : 'text-slate-400 hover:text-white'}`}>Math</button>
+              <button onClick={() => handleSort('reading')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${sortBy === 'reading' ? 'bg-emerald-500 text-white' : 'text-slate-400 hover:text-white'}`}>Lectura</button>
             </div>
             <button onClick={exportToCSV} className="keep-colors flex items-center space-x-2 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-all">
               <Download className="w-4 h-4" />
