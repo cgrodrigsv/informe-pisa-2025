@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import { SCHOOL_LIFE_DATA } from '../data/pisa2025Data';
-import { ShieldCheck, SmartphoneOff, Bot } from 'lucide-react';
+import { ShieldCheck, Smartphone, Bot } from 'lucide-react';
 
 export default function SchoolLife() {
   const formattedData = [
@@ -56,7 +56,7 @@ export default function SchoolLife() {
 
             <div className="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl">
               <div className="flex items-center space-x-3 mb-2">
-                <SmartphoneOff className="w-5 h-5 text-rose-400" />
+                <Smartphone className="w-5 h-5 text-rose-400" />
                 <h4 className="font-bold text-white">Políticas de Dispositivos Móviles</h4>
               </div>
               <p className="text-sm text-slate-400">
